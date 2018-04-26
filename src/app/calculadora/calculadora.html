@@ -1,0 +1,35 @@
+<div class="panel panel-default calculadora-width">
+  <div class="panel-body">
+    <form class="calculator-form form-horizontal" name="vm.calcularForm" ng-submit="vm.calcular()" novalidate>
+      <div class="form-group" ng-class="{ 'has-error' : vm.calcularForm.salarioBruto.$error && vm.submitted  }">
+        <label class="col-sm-4 control-label" for="salarioBruto">Salário Bruto</label>
+        <div class="input-group col-sm-4">
+          <input class="money form-control text-right calculadora-input" name="salarioBruto" maxlength="14" ng-model="vm.salarioBruto"
+            type="text" ui-money-mask required>
+          <p ng-show="vm.submitted && vm.calcularForm.salarioBruto.$error" class="help-block">The Salário Bruto field is required.</p>
+        </div>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : vm.calcularForm.numDependentes.$error && vm.submitted  }">
+        <label class="col-sm-4 control-label" for="numDependentes">Número de dependentes</label>
+        <div class="input-group col-sm-4">
+          <input class="int form-control text-right calculadora-input" name="numDependentes" maxlength="14" ng-model="vm.numDependentes"
+            type="number" required>
+          <p ng-show="vm.submitted && vm.calcularForm.numDependentes.$error" class="help-block">The Número de dependentes field is required.</p>
+        </div>
+      </div>
+      <div class="form-group" ng-class="{ 'has-error' : vm.calcularForm.outrosDescontos.$error && vm.submitted  }">
+        <label class="col-sm-4 control-label" for="outrosDescontos">Outros Descontos</label>
+        <div class="input-group col-sm-4">
+          <input class="money form-control text-right calculadora-input" data-val="true" name="outrosDescontos" maxlength="14" ng-model="vm.outrosDescontos"
+            type="text" ui-money-mask>
+          <p ng-show="vm.submitted && vm.calcularForm.outrosDescontos.$error" class="help-block">The Outros Descontos field is required.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-5 col-sm-8">
+          <input id="Calcular" value="Calcular" type="submit" class="btn btn-success " />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
