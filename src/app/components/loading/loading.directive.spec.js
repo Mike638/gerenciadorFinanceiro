@@ -5,6 +5,7 @@
     // var vm;
     var el;
 
+    beforeEach(module('gerenciadorFinanceiro'));
     beforeEach(module('app.loading'));
     beforeEach(inject(function($compile, $rootScope) {
 
